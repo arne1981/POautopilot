@@ -14,13 +14,11 @@ bool oldDeviceConnected = false;
 class MyServerCallbacks : public BLEServerCallbacks {
   void onConnect(BLEServer *pServer) {
     deviceConnected = true;
-    Serial.println("connected");
     digitalWrite(LED, HIGH);
   };
 
   void onDisconnect(BLEServer *pServer) {
     deviceConnected = false;
-    Serial.println("Disconnected");
     digitalWrite(LED, LOW);
     delay(500);
     pServer->getAdvertising()->start();
@@ -35,8 +33,6 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 
     if (rxValue.length() > 0) {
       String rxString = rxValue.c_str();
-      Serial.print("Received Value: ");
-      Serial.println(rxString);
 
       if (rxString.startsWith("motor")) {
         rxString.remove(0, 5);
@@ -84,6 +80,5 @@ void bluetooth_loop() {
 
   if (deviceConnected && !oldDeviceConnected) {
     oldDeviceConnected = deviceConnected;
-    Serial.println("Connecting...");
   }
 }

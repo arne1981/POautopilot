@@ -19,7 +19,7 @@ void motor_set(int motor_speed, int motor_direction) {
   if (motor_direction == 1) {
     analogWrite(LPWM, 0);
     analogWrite(RPWM, motor_speed);
-  } else {  // motor direct = 0
+  } else {
     analogWrite(RPWM, 0);
     analogWrite(LPWM, motor_speed);
   }
