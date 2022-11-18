@@ -67,8 +67,7 @@ void bluetooth_setup() {
 }
 
 void bluetooth_loop() {
-  if (deviceConnected) {
-  }
+  if (deviceConnected) {  }
 
   if (!deviceConnected && oldDeviceConnected) {
     delay(500);      
