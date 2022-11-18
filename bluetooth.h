@@ -1,7 +1,6 @@
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
-#include <BLE2902.h>
 
 BLEServer *pServer = NULL;
 bool deviceConnected = false;
@@ -66,7 +65,7 @@ void bluetooth_setup() {
   pinMode(LED, OUTPUT);
 }
 
-void bluetooth_loop() {
+void bluetooth_update() {
   if (deviceConnected) {  }
 
   if (!deviceConnected && oldDeviceConnected) {
