@@ -7,7 +7,7 @@ BLEServer *pServer = NULL;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
 
-#define SERVICE_UUID "ab0828b1-198e-4351-b779-901fa0e0371e"  // UART service UUID
+#define SERVICE_UUID "ab0828b1-198e-4351-b779-901fa0e0371e" 
 #define UUID_RECEIVE "4ac8a682-9736-4e5d-932b-e9b31405049c"
 #define LED 2
 
@@ -22,7 +22,6 @@ class MyServerCallbacks : public BLEServerCallbacks {
     digitalWrite(LED, LOW);
     delay(500);
     pServer->getAdvertising()->start();
-
     motor_set(0, 0);
   }
 };
@@ -68,7 +67,6 @@ void bluetooth_setup() {
 }
 
 void bluetooth_loop() {
-
   if (deviceConnected) {
   }
 
