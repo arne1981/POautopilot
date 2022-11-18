@@ -1,4 +1,3 @@
-#include <math.h>
 #include "motor.h"
 void motor_set(int, int);
 #include "bluetooth.h"
